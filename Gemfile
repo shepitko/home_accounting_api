@@ -20,3 +20,5 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Deploy with Capistrano
 # gem 'capistrano', :group => :development
+
+gem 'rails_12factor'
