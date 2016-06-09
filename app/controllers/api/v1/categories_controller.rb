@@ -49,6 +49,17 @@ class Api::V1::CategoriesController < Api::V1::ApiController
     }.to_json
   end
 
+  def types
+    categories = Category.all
+    
+    case params[:type]
+    when 'spend' then render json: categories.spend.to_json()
+    when 'income' then render json: categories.income.to_json()
+    else render text:'Not Found', status:'404'
+    end
+    
+  end
+
   private
   def category_params
     params.permit(:name, :types, :path_img)
