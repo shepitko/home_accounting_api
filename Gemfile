@@ -11,6 +11,8 @@ gem 'rack-cors'
 gem 'spring', :group => :development
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
+  gem 'json_spec'
+  gem 'shoulda-matchers'
 end
 
 # To use ActiveModel has_secure_password
