@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(version: 20160428031258) do
   add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
 
   create_table "wallets", force: :cascade do |t|
+    t.string   "name"
     t.decimal  "price",       precision: 10, scale: 2
-    t.date     "date"
     t.integer  "category_id"
     t.integer  "user_id"
     t.datetime "created_at"

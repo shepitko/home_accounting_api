@@ -50,7 +50,7 @@ class Api::V1::WalletsController < Api::V1::ApiController
 
   private
   def wallet_params
-    params.permit(:price, :date, :user_id, :category_id)
+    params.permit( :name, :price, :user_id, :category_id)
   end
 
 

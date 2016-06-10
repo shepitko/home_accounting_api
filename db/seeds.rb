@@ -16,6 +16,7 @@ income = [
 	['Премия', 'money'],
 	['Пасивный доход', 'download'],
 	['Подарок', 'optin-monster '],
+	['Продажа', 'sing-language']
 ]
 
 income.each do |name, icon|
@@ -25,3 +26,7 @@ end
 spend.each do |name, icon|
   Category.create( name: name, path_img: icon, "types": :spending )
 end
+
+User.create(email:'ya.shepitko@gmail.com', password:"12345678")
+
+Wallet.create(name:'Хлебушек', price:"289.99", user_id:1, category_id:6)
