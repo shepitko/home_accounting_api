@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :wallets,  only: [:index, :show, :create, :destroy, :update]
       resources :categories, only: [:index, :show, :create, :destroy, :update]
       get '/categories/types/:type', to: 'categories#types'
+      get '/wallets/types/:type', to: 'wallets#types'
     end
   end
 end

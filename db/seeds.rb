@@ -16,7 +16,7 @@ income = [
 	['Премия', 'money'],
 	['Пасивный доход', 'download'],
 	['Подарок', 'optin-monster '],
-	['Продажа', 'sing-language']
+	['Продажа', 'sign-language']
 ]
 
 income.each do |name, icon|

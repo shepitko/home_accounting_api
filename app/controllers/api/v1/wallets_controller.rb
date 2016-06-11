@@ -47,6 +47,16 @@ class Api::V1::WalletsController < Api::V1::ApiController
       wallet: wallet
     }.to_json
   end
+  
+  def types
+  
+    case params[:type]
+    when 'spend' then render json: Wallet.spend.to_json()
+    when 'income' then render json: Wallet.income.to_json()
+    else render text:'Not Found', status:'404'
+    end
+    
+  end
 
   private
   def wallet_params
