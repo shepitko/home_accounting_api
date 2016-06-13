@@ -51,8 +51,8 @@ class Api::V1::WalletsController < Api::V1::ApiController
   def types
   
     case params[:type]
-    when 'spend_sum' then render json: Wallet.sum_price_category.spend.to_json(:include => [:category])
-    when 'income_sum' then render json: Wallet.sum_price_category.income.to_json(:include => { :category => { :only => [:name, :path_img]} },)
+    when 'spend_sum' then render json: Wallet.sum_price_category.spend.to_json(:include => { :category => { :only => [:name, :path_img]} })
+    when 'income_sum' then render json: Wallet.sum_price_category.income.to_json(:include => { :category => { :only => [:name, :path_img]} })
     when 'spend' then render json: Wallet.spend.to_json()
     when 'income' then render json: Wallet.income.to_json()
     else render text:'Not Found', status:'404'
