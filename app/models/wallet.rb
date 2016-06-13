@@ -6,5 +6,6 @@ class Wallet < ActiveRecord::Base
    
    scope :spend, -> { joins(:category).merge(Category.where(:types => 0)) }
    scope :income, -> { joins(:category).merge(Category.where(:types => 1)) }
+   scope :sum_price_category, -> { select([:category_id, 'sum("price") as price']).group(:category_id) }
    
 end
